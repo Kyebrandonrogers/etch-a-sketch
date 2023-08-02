@@ -82,6 +82,9 @@ body {
 .grid-container div{
     border: 1px solid var(--fourth-color);
     box-sizing: border-box;
+    width: 6.25%;
+    height: 6.25%;
+
 }
 
 
