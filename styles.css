@@ -74,10 +74,14 @@ body {
     height: 600px;
     width: 600px;
     border: 4px solid var(--fourth-color);
+    display: flex;
+    flex-wrap: wrap;
+
 }
 
 .grid-container div{
     border: 1px solid var(--fourth-color);
+    box-sizing: border-box;
 }
 
 
