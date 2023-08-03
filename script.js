@@ -1,20 +1,16 @@
-
-let isClicked = 0;
 function pen() {
+    const mode = document.getElementById("penMode");
+    let elem = mode.textContent.includes("OFF");
     const grid = document.getElementById("gridContainer");
-    if (isClicked == 0) {
-        grid.style.backgroundColor = "blue";
-        let isClicked = 1;
-        console.log(isClicked);
-    }
-    else if (isClicked == 1) {
+    if (elem) {
+        grid.style.backgroundColor = "white";
+        mode.innerHTML = "ON";
+    }  
+    else {
         grid.style.backgroundColor = "red";
-        let isClicked = 0;
-        console.log(isClicked);
-    }
+        mode.innerHTML = "OFF";
+    }     
 }
-
-pen(isClicked);
 
 function createGrid() {
     const gridContainer = document.getElementById("gridContainer");

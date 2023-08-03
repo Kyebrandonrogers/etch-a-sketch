@@ -84,7 +84,10 @@ body {
     box-sizing: border-box;
     width: 6.25%;
     height: 6.25%;
+}
 
+.grid-container div:hover {
+    background-color: var(--first-color);
 }
 
 
