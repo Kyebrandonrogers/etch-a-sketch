@@ -61,6 +61,10 @@ body {
     font-family: 'Marker Felt', fantasy;
 }
 
+.colored {
+    background-color: #30414b;
+}
+
 .container {
     flex: 1 1 auto;
     height: 90%;
@@ -87,7 +91,7 @@ body {
 }
 
 .grid-container div:hover {
-    background-color: var(--first-color);
+    background-color: #989e9c;
 }
 
 

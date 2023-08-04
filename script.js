@@ -1,16 +1,22 @@
+
 function pen() {
-    const mode = document.getElementById("penMode");
-    let elem = mode.textContent.includes("OFF");
-    const grid = document.getElementById("gridContainer");
-    if (elem) {
-        grid.style.backgroundColor = "white";
-        mode.innerHTML = "ON";
-    }  
-    else {
-        grid.style.backgroundColor = "red";
-        mode.innerHTML = "OFF";
-    }     
+    const boxes = document.querySelectorAll(".box");
+    boxes.forEach(item => {
+        item.addEventListener("mouseover", function () {
+            item.style.backgroundColor = "white";
+        });
+    })
 }
+
+function eraser() {
+    const boxes = document.querySelectorAll(".box");
+    boxes.forEach(item => {
+        item.addEventListener("mouseover", function () {
+            item.style.backgroundColor = "#dfd3bb";
+        });
+    }) 
+}
+
 
 function createGrid() {
     const gridContainer = document.getElementById("gridContainer");
@@ -33,30 +39,20 @@ function createGrid() {
 }
 
 function clearGrid() {
+    const gridContainer = document.getElementById("gridContainer");
     const boxes = document.getElementsByClassName("box");
-    for (let i = 0; i < boxes.length; i++) {
-        boxes[i].style.backgroundColor = "#dfd3bb";
+    let total = boxes.length;
+    let size = Math.sqrt(total);
+    removeElementsByClass("box");
+    for (let row = 0; row < total; row++){
+        const box = document.createElement("div");
+        box.classList.add("box");
+        box.style.width = `${(1/size)*100}%`;
+        box.style.height = `${(1/size)*100}%`;
+        gridContainer.appendChild(box);
     }
 }
 
-
-// function pen(isClicked) {
-//     // make it so it draws on first click and stops on second
-
-//     // check if its first click
-//     if (isClicked == "false") { 
-//         isClicked = "true";
-//         const element = document.getElementById("gridContainer");
-//         element.style.backgroundColor = "blue";
-//         // make code for hover
-//     }
-//     // check if its second click
-//     else if (isClicked == "true"){
-//         isClicked = "false";
-//         const element = document.getElementById("gridContainer");
-//         element.style.backgroundColor = "red";
-//     }
-// }
 
 function removeElementsByClass(className){
     const elements = document.getElementsByClassName(className);
